@@ -4,13 +4,13 @@ extends Camera2D
 func _process(delta: float) -> void:
 	var mouse_x = get_local_mouse_position().x
 	var mouse_y = get_local_mouse_position().y
-	print($".".position.y)
-	if mouse_x >= 900:
+	print(get_window().size.y)
+	if mouse_x >= get_window().size.x * 0.5:
 		$".".position.x += 300*delta
-	if mouse_x <= -900:
+	if mouse_x <= -get_window().size.x * 0.5:
 		$".".position.x -= 300*delta
-	if mouse_y >= 550:
+	if mouse_y >= get_window().size.y * .45:
 		$".".position.y += 300*delta
-	if mouse_y <= -510:
+	if mouse_y <= -get_window().size.y * .45:
 		$".".position.y -= 300*delta
 
